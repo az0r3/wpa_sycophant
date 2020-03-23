@@ -11,11 +11,14 @@ This was released as part of a [Defcon 26 talk](https://www.youtube.com/watch?v=
 A hub of wireless hacking information is at https://w1f1.net/ where links to other tools may be found. 
 
 ## Bootstrap
+
 ### Be aware
 This tool appears to be *extremely* sensitive to connection quality.  
 In case of weird SSL errors change antenna position, or try switching to/from GnuTLS in `.config`.
+
 ### Steps
 * Set up SSID/rogue mac @ wpa_sycophant_example.conf
+* `$ make -C wpa_supplicant -j8`
 * `# ./wpa_sycophant.sh -c wpa_sycophant_example.conf -i <iface>`
 * Wait for `CTRL-EVENT-CONNECTED`
 * `# dhclient <iface>` (if still no routes on `<iface>`)
